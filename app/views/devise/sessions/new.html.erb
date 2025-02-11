@@ -7,14 +7,14 @@
       
       <!-- Email Field -->
       <div class="mb-6">
-        <%= f.label :email, class: "block text-sm font-semibold text-gray-700" %>
+        <%= f.label :email, class: "block text-sm text-white font-semibold text-gray-700" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", 
             class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-500" %>
       </div>
 
       <!-- Password Field -->
       <div class="mb-6">
-        <%= f.label :password, class: "block text-sm font-semibold text-gray-700" %>
+        <%= f.label :password, class: "block text-white text-sm font-semibold text-gray-700" %>
         <%= f.password_field :password, autocomplete: "current-password", 
             class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-500" %>
       </div>
@@ -22,7 +22,7 @@
       <!-- Remember Me -->
       <% if devise_mapping.rememberable? %>
         <div class="mb-6">
-          <label class="flex items-center">
+          <label class="flex text-white items-center">
             <%= f.check_box :remember_me, class: "h-4 w-4 text-purple-800 focus:ring-purple-500 border-gray-300 rounded" %>
             <span class="ml-2 text-sm text-gray-600">Remember me</span>
           </label>
@@ -30,25 +30,16 @@
       <% end %>
 
       <!-- Submit Button -->
-      <div class="flex flex-col gap-4 mt-6">
+      <div class="flex flex-col p-6 gap-4 mt-6">
         <%= f.submit "Login", 
             class: "w-full mt-6 py-2 px-4 bg-purple-800 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200" %>
       </div>
       
       <!-- Additional Links -->
-      <div class="mt-6 text-center space-y-2">
-        <p class="text-sm text-gray-600">
-          Don't have an account? 
-          <%= link_to "Sign up", new_registration_path(resource_name), 
-              class: "font-medium text-purple-800 hover:text-purple-700 ml-1" %>
-        </p>
+      <div class="mt-6 text-center text-white space-y-2">
+               <%= render "devise/shared/links" %>
         
-        <%- if devise_mapping.recoverable? %>
-          <p class="text-sm text-gray-600">
-            <%= link_to "Forgot your password?", new_password_path(resource_name), 
-                class: "font-medium text-purple-800 hover:text-purple-700" %>
-          </p>
-        <% end %>
+        
       </div>
     <% end %>
   </div>

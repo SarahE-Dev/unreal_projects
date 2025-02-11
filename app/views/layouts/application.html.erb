@@ -13,16 +13,17 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class='bg-black text-white'>
+  <body class='bg-black'>
 
-  <nav class="bg-gray-900 p-4">
+  <nav class="p-4">
   <div class="flex justify-between items-center">
-    <a href="/" class="text-2xl font-bold text-white">Unreal Projects</a>
+    <a href="/" class="text-2xl text-white font-bold gradient-text">Unreal Projects</a>
     
     <div class="space-x-4">
     <% if user_signed_in? %>
@@ -36,7 +37,7 @@
     </div>
   </div>
 </nav>
-    <main class="container mx-auto mt-10 px-5 flex">
+    <main class="container mx-auto mt-10 px-5">
       <%= yield %>
     </main>
   </body>

@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="my-5">
+  <div class="my-5 text-white">
     <%= form.label :title %>
     <%= form.text_field :title, class: "block bg-black shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
+  <div class="my-5 text-white">
     <%= form.label :description %>
     <%= form.text_area :description, rows: 4, class: "block bg-black shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
 
-  <div class="my-5">
+  <div class="my-5 text-white">
     <%= form.label :project_url %>
     <%= form.text_field :project_url, class: "block bg-black shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
+  <div class="my-5 text-white">
     <%= form.label :image_url %>
     <%= form.text_field :image_url, class: "block bg-black shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
