@@ -1,0 +1,30 @@
+<%# app/views/devise/passwords/new.html.erb - Forgot Password page %>
+<div class="min-h-screen w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="w-full rounded-xl shadow-lg p-8">
+    <h2 class="text-3xl font-bold text-center text-purple-800 mb-6">Reset Password</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="mb-6">
+        <%= f.label :email, class: "block text-sm font-semibold text-gray-700" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+            class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-500" %>
+      </div>
+
+      <div class="flex flex-col gap-4 mt-6">
+        <%= f.submit "Send reset instructions", 
+            class: "w-full mt-6 py-2 px-4 bg-purple-800 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200" %>
+      </div>
+
+      <div class="mt-6 text-center">
+        <p class="text-sm text-gray-600">
+          <%= link_to "Back to login", new_session_path(resource_name), 
+              class: "font-medium text-purple-800 hover:text-purple-700" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

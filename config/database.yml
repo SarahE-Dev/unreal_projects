@@ -79,7 +79,10 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: unreal_projects_production
-  username: unreal_projects
-  password: <%= ENV["UNREAL_PROJECTS_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= ENV["DATABASE_URL"] %>
+
+  
+
